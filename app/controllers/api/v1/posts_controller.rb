@@ -1,6 +1,6 @@
 class Api::V1::PostsController < Api::V1::BaseController
   def index
-    @posts = Post.all
+    @posts = Post.order(:created_at)
   end
 
   def create
@@ -15,7 +15,7 @@ class Api::V1::PostsController < Api::V1::BaseController
   private
 
   def post_params
-    params.require(:post).permit(:image, :content)
+    params.require(:post).permit(:image, :content, :searched)
   end
 
   def render_error

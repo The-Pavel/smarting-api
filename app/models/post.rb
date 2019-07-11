@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  has_many :comments, dependent: :nullify
+  has_many :comments, dependent: :delete_all
   after_save :self_destruct
 
   private

@@ -9,10 +9,10 @@
 Comment.delete_all
 Post.delete_all
 
-Post.create!(image: "http://askwomenonline.org/wp-content/uploads/2017/12/hummus-recipe-760x428.jpg", content: "#{Faker::Hipster.sentence(3, false, 0)}")
-Post.create!(image: "https://img.grouponcdn.com/deal/8DDtq5XRzVnLXEUnPHPd/p2-2048x1229/v1/c700x420.jpg", content: "#{Faker::Hipster.sentence(3, false, 0)}")
-Post.create!(image: "https://media-cdn.tripadvisor.com/media/photo-s/11/76/1c/72/stock-burger-co.jpg", content: "#{Faker::Hipster.sentence(3, false, 0)}")
-Post.create!(image: "https://media-cdn.tripadvisor.com/media/photo-s/11/76/1c/72/stock-burger-co.jpg", content: "#{Faker::Hipster.sentence(3, false, 0)}")
+Post.create!(image: "http://askwomenonline.org/wp-content/uploads/2017/12/hummus-recipe-760x428.jpg", content: "#{Faker::Hipster.sentence(3, false, 0)}", searched: ["happy", "sad", "excited", "depressed"].sample)
+Post.create!(image: "https://img.grouponcdn.com/deal/8DDtq5XRzVnLXEUnPHPd/p2-2048x1229/v1/c700x420.jpg", content: "#{Faker::Hipster.sentence(3, false, 0)}", searched: ["happy", "sad", "excited", "depressed"].sample)
+Post.create!(image: "https://media-cdn.tripadvisor.com/media/photo-s/11/76/1c/72/stock-burger-co.jpg", content: "#{Faker::Hipster.sentence(3, false, 0)}", searched: ["happy", "sad", "excited", "depressed"].sample)
+Post.create!(image: "https://media-cdn.tripadvisor.com/media/photo-s/11/76/1c/72/stock-burger-co.jpg", content: "#{Faker::Hipster.sentence(3, false, 0)}", searched: ["happy", "sad", "excited", "depressed"].sample)
 
 Post.all.each do |post|
   Comment.create!(post: post, text: "#{Faker::Hipster.sentence(2, false, 0)}", name: "#{Faker::Name.first_name}")

@@ -12,6 +12,10 @@ class Api::V1::PostsController < Api::V1::BaseController
     end
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
+
   private
 
   def post_params

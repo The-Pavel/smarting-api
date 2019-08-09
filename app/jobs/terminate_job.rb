@@ -3,6 +3,6 @@ class TerminateJob < ApplicationJob
 
   def perform(post_id)
     post = Post.find(post_id)
-    post.delete
+    post.destroy
   end
 end

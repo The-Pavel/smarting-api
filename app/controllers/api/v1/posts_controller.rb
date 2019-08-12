@@ -1,7 +1,7 @@
 class Api::V1::PostsController < Api::V1::BaseController
   def index
     posts = Post.all
-    @posts = posts.sort{|p| p.comments.size}.reverse!
+    @posts = posts.sort_by{|post| post.comments.size}.reverse!
   end
 
   def create

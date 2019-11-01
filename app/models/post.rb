@@ -5,6 +5,6 @@ class Post < ApplicationRecord
   private
 
   def self_destruct
-    TerminateJob.set(wait: 30.minutes).perform_later(self.id)
+    TerminateJob.set(wait: 15.minutes).perform_later(self.id)
   end
 end
